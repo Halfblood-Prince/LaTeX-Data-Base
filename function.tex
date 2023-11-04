@@ -13,6 +13,10 @@
     \setkeys{mykeys}{#1}%
 \begin{equation} \label{\eqnlabel} #1 \end{\e} } \makeatother
 
-\def \p#1{  \noindent #1  }  \def \pg#1{  \noindent #1 \\  }  
+\newcommand{\p}[1]{%
+    \noindent #1 }
+\newcommand{\p}[1]{%
+    \noindent #1 \\ }
+
 
 \def \pb{  \vfill \pagebreak  }  \def \imgrow#1#2#3#4#5#6#7#8{  \begin{figure}[h] \centering \begin{subfigure}{0.45\textwidth} \centering \includegraphics[width=\linewidth]{#1} \captionsetup{justification=centering} \caption{#2} \label{#3} \end{subfigure} \begin{subfigure}{0.45\textwidth} \centering \includegraphics[width=\linewidth]{#4} \captionsetup{justification=centering} \caption{#5} \label{#6} \end{subfigure} \captionsetup{justification=centering} \caption{#7} \label{#8} \end{figure}  }
