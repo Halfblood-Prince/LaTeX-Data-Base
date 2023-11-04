@@ -11,11 +11,11 @@
 
 \makeatletter \define@key{mykeys}{e}{\def\equation{#1}} \define@key{mykeys}{label}{\def\eqnlabel{#1}} \newcommand{\eq}[1]{%
     \setkeys{mykeys}{#1}%
-\begin{equation} \label{\eqnlabel} #1 \end{\e} } \makeatother
+\begin{equation} \label{\eqnlabel} \end{\e} } \makeatother
 
 \newcommand{\p}[1]{%
     \noindent #1 }
-\newcommand{\p}[1]{%
+\newcommand{\pg}[1]{%
     \noindent #1 \\ }
 
 
