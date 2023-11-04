@@ -4,8 +4,16 @@
 % This API is owned by Group E02A %
 % LaTeX Application Programming Interface (API) © 2023 by Akhil S Kumar is licensed under Attribution-NonCommercial-NoDerivatives 4.0 International. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/ %
 
-\makeatletter \define@key{mykeys}{name}{\def\imgname{#1}} \define@key{mykeys}{width}{\def\imgwidth{#1}} \define@key{mykeys}{caption}{\def\imgcaption{#1}} \define@key{mykeys}{label}{\def\imglabel{#1}} \newcommand{\img}[1]{ \setkeys{mykeys}{#1} \begin{figure}[h] \centering \includegraphics[width= \imgwidth, keepaspectratio]{\imgname} \captionsetup{justification=centering} \caption{\imgcaption} \label{\imglabel} \end{figure} } \makeatother
-\makeatletter \define@key{mykeys}{e}{\def\equation{#1}} \define@key{mykeys}{label}{\def\eqnlabel{#1}} \newcommand{\eq}[1]{ \setkeys{mykeys}{#1} \begin{equation} \label{\eqnlabel} \end{\e} } \makeatother
+\makeatletter 
+\define@key{mykeys}{name}{\def\imgname{#1}}
+\define@key{mykeys}{width}{\def\imgwidth{#1}}
+\define@key{mykeys}{caption}{\def\imgcaption{#1}}
+\define@key{mykeys}{label}{\def\imglabel{#1}} 
+\define@key{mykeys}{e}{\def\equation{#1}}
+\define@key{mykeys}{label}{\def\eqnlabel{#1}} 
+
+\newcommand{\img}[1]{ % \setkeys{mykeys}{#1} % \begin{figure}[h] \centering \includegraphics[width= \imgwidth, keepaspectratio]{\imgname} \captionsetup{justification=centering} \caption{\imgcaption} \label{\imglabel} \end{figure} }
+\newcommand{\eq}[1]{ % \setkeys{mykeys}{#1} % \begin{equation} \label{\eqnlabel} \end{\e} } \makeatother
 
 \newcommand{\p}[1]{\noindent #1} \newcommand{\pg}[1]{\noindent #1 \\} \newcommand{\pb}[0]{\vfill \pagebreak} 
 
