@@ -11,7 +11,7 @@
 
 \makeatletter \define@key{mykeys}{e}{\def\equation{#1}} \define@key{mykeys}{label}{\def\eqnlabel{#1}} \newcommand{\eq}[1]{%
     \setkeys{mykeys}{#1}%
-\begin{equation} \label{#2} #1 \end{equation} } \makeatother
+\begin{equation} \label{\eqnlabel} #1 \end{\e} } \makeatother
 
 \def \p#1{  \noindent #1  }  \def \pg#1{  \noindent #1 \\  }  
 
