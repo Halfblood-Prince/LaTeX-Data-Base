@@ -1,6 +1,18 @@
-\def \img#1#2#3#4{ \begin{figure}[h] \centering \includegraphics[width=#2\linewidth, keepaspectratio]{#1} \captionsetup{justification=centering} \caption{#3} \label{#4} \end{figure} } \def \p#1{ \noindent #1 } \def \pg#1{ \noindent #1 \\ } \def \eq#1#2{ \begin{equation} \label{#2} #1 \end{equation} } \def 
+\def \img#1#2#3#4{
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=#2\linewidth, keepaspectratio]{#1}
+    \captionsetup{justification=centering}
+    \caption{#3}
+    \label{#4}
+    \end{figure}
+    }
 
-\imgrow#1#2#3#4#5#6#7#8{
+\def \p#1{ \noindent #1 }
+\def \pg#1{ \noindent #1 \\ }
+\def \eq#1#2{ \begin{equation} \label{#2} #1 \end{equation} }
+
+\def \imgrow#1#2#3#4#5#6#7#8{
   \begin{figure}[h]
     \centering
     \begin{subfigure}{0.45\textwidth}
