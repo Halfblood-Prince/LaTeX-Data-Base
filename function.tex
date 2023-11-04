@@ -10,9 +10,6 @@
 \define@key{imgkeys}{caption}{\def\imgcaption{#1}}
 \define@key{imgkeys}{label}{\def\imglabel{#1}} 
 
-\define@key{eqnkeys}{e}{\def\equation{#1}}
-\define@key{eqnkeys}{label}{\def\eqnlabel{#1}} 
-
 \define@key{rowkeys}{lname}{\def\leftimgname{#1}}
 \define@key{rowkeys}{lcaption}{\def\leftimgcaption{#1}} 
 \define@key{rowkeys}{llabel}{\def\leftimglabel{#1}}
@@ -26,9 +23,7 @@
 \setkeys{imgkeys}{#1} %
 \begin{figure}[h] \centering \includegraphics[width= \imgwidth, keepaspectratio]{\imgname} \captionsetup{justification=centering} \caption{\imgcaption} \label{\imglabel} \end{figure} }
 
-\newcommand{\eq}[1]{%
-\setkeys{eqnkeys}{#1} %
-\begin{equation} \label{\eqnlabel} \equation \end{equation} }
+\newcommand{\eq}[2]{ \begin{equation} \label{#2} #1 \end{equation} }
 
 \newcommand{\p}[1]{\noindent #1} \newcommand{\pg}[1]{\noindent #1 \\} \newcommand{\pb}[0]{\vfill \pagebreak} 
 
