@@ -1,4 +1,4 @@
-% LaTeX Application Programming Interface (API) v 4.3.3 %
+% LaTeX Application Programming Interface (API) v 5.0.0 %
 % Released on 04-11-2023 %
 % Contains some functions that can be used to cutshort long lines of codes into a single one %
 % Created by Akhil S Kumar for use only within Group E02A. No one outside of Group E02A is permitted to use this in their LaTeX Project Report %
@@ -7,10 +7,10 @@
 % LaTeX Application Programming Interface (API) © 2023 by Akhil S Kumar is licensed under Attribution-NonCommercial-NoDerivatives 4.0 International (CC-BY-NC-ND). %
 % To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/ %
 
-\makeatletter 
-\define@key{imgkeys}{name}{\def\imgname{#1}} \define@key{imgkeys}{width}{\def\imgwidth{#1}} \define@key{imgkeys}{caption}{\def\imgcaption{#1}} \define@key{imgkeys}{label}{\def\imglabel{#1}} \define@key{rowkeys}{lname}{\def\leftimgname{#1}} \define@key{rowkeys}{lcaption}{\def\leftimgcaption{#1}} \define@key{rowkeys}{llabel} {\def\leftimglabel{#1}} \define@key{rowkeys}{rname}{\def\rightimgname{#1}} \define@key{rowkeys}{rcaption}{\def\rightimgcaption{#1}} \define@key{rowkeys}{rlabel} {\def\rightimglabel{#1}} \define@key{rowkeys}{imgcaption}{\def\fullimgcaption{#1}} \define@key{rowkeys}{imglabel}{\def\fullimglabel{#1}}
-\newcommand{\img}[1]{%
+\makeatletter \define@key{imgkeys}{name}{\def\imgname{#1}} \define@key{imgkeys}{width}{\def\imgwidth{#1}} \define@key{imgkeys}{caption}{\def\imgcaption{#1}} \define@key{imgkeys}{label}{\def\imglabel{#1}} \define@key{rowkeys}{lname}{\def\leftimgname{#1}} \define@key{rowkeys}{lcaption}{\def\leftimgcaption{#1}} \define@key{rowkeys}{llabel} {\def\leftimglabel{#1}} \define@key{rowkeys}{rname}{\def\rightimgname{#1}} \define@key{rowkeys}{rcaption}{\def\rightimgcaption{#1}} \define@key{rowkeys}{rlabel} {\def\rightimglabel{#1}} \define@key{rowkeys}{imgcaption}{\def\fullimgcaption{#1}} \define@key{rowkeys}{imglabel}{\def\fullimglabel{#1}} \define@key{tblkeys}{tableone}{\def\tblone{#1}} \define@key{tblkeys}{tabletwo}{\def\tbltwo{#1}} \define@key{tblkeys}{caption}{\def\tblcap{#1}} \define@key{tblkeys}{label}{\def\tbllab{#1}} \newcommand{\img}[1]{%
 \setkeys{imgkeys}{#1} %
 \begin{figure}[h] \centering \includegraphics[width= \imgwidth, keepaspectratio]{\imgname} \captionsetup{justification=centering} \caption{\imgcaption} \label{\imglabel} \end{figure} } \newcommand{\eq}[2]{\begin{equation} \label{#2} #1 \end{equation}} \newcommand{\p}[0]{ \noindent } \newcommand{\pb}[0]{\vfill \pagebreak} \newcommand{\imgrow}[8]{%
 \setkeys{rowkeys}{#1} %  
-\begin{figure}[h] \centering \begin{subfigure}{0.45\textwidth} \centering \includegraphics[width=\linewidth]{\leftimgname} \captionsetup{justification=centering} \caption{\leftimgcaption} \label{\leftimglabel} \end{subfigure} \begin{subfigure}{0.45\textwidth} \centering \includegraphics[width=\linewidth]{\rightimgname} \captionsetup{justification=centering} \caption{\rightimgcaption} \label{\rightimglabel} \end{subfigure} \captionsetup{justification=centering} \caption{\fullimgcaption} \label{\fullimglabel} \end{figure} } \makeatother
+\begin{figure}[h] \centering \begin{subfigure}{0.45\textwidth} \centering \includegraphics[width=\linewidth]{\leftimgname} \captionsetup{justification=centering} \caption{\leftimgcaption} \label{\leftimglabel} \end{subfigure} \begin{subfigure}{0.45\textwidth} \centering \includegraphics[width=\linewidth]{\rightimgname} \captionsetup{justification=centering} \caption{\rightimgcaption} \label{\rightimglabel} \end{subfigure} \captionsetup{justification=centering} \caption{\fullimgcaption} \label{\fullimglabel} \end{figure} } \newcommand{\tablerow}[1]{%
+\setkeys{tblkeys}{#1} %
+\begin{figure} \begin{subfigure}{0.5\linewidth} \centering \captionsetup{justification=centering} \tblone \end{subfigure} \begin{subfigure}{0.5\linewidth}    \centering \captionsetup{justification=centering} \tbltwo \end{subfigure} \captionsetup{justification=centering} \caption{\tblcap} \label{\tbllab} \end{figure} } \makeatother
