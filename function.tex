@@ -21,9 +21,32 @@
 % 6. Modifications: I reserve the right to modify, suspend, or discontinue the Latex API at any time, with or without notice. I may also update these terms, and it is your responsibility to review them periodically. %
 
 
-\makeatletter \define@key{imgkeys}{name}{\def\imgname{#1}} \define@key{imgkeys}{width}{\def\imgwidth{#1}} \define@key{imgkeys}{caption}{\def\imgcaption{#1}} \define@key{imgkeys}{label}{\def\imglabel{#1}} \define@key{rowkeys}{lname}{\def\leftimgname{#1}} \define@key{rowkeys}{lcaption}{\def\leftimgcaption{#1}} \define@key{rowkeys}{llabel} {\def\leftimglabel{#1}} \define@key{rowkeys}{rname}{\def\rightimgname{#1}} \define@key{rowkeys}{rcaption}{\def\rightimgcaption{#1}} \define@key{rowkeys}{rlabel} {\def\rightimglabel{#1}} \define@key{rowkeys}{imgcaption}{\def\fullimgcaption{#1}} \define@key{rowkeys}{imglabel}{\def\fullimglabel{#1}} \define@key{tblkeys}{tableone}{\def\tblone{#1}} \define@key{tblkeys}{tabletwo}{\def\tbltwo{#1}} \define@key{tblkeys}{caption}{\def\tblcap{#1}} \define@key{tblkeys}{label}{\def\tbllab{#1}}
-
-\define@key{mykeys}{param1}[]{\def\myparamone{#1}} \define@key{mykeys}{param2}[]{\def\myparamtwo{#1}} \define@key{mykeys}{param3}[]{\def\myparamthree{#1}} \define@key{mykeys}{param4}[]{\def\myparamfour{#1}} \define@key{mykeys}{param5}[]{\def\myparamfive{#1}} \define@key{mykeys}{param6}[]{\def\myparamsix{#1}} \define@key{mykeys}{param7}[]{\def\myparamseven{#1}} \define@key{mykeys}{param8}[]{\def\myparameight{#1}} \define@key{mykeys}{param9}[]{\def\myparamnine{#1}} 
+\makeatletter
+\define@key{imgkeys}{name}{\def\imgname{#1}}
+\define@key{imgkeys}{width}{\def\imgwidth{#1}}
+\define@key{imgkeys}{caption}{\def\imgcaption{#1}}
+\define@key{imgkeys}{label}{\def\imglabel{#1}}
+\define@key{rowkeys}{lname}{\def\leftimgname{#1}}
+\define@key{rowkeys}{lcaption}{\def\leftimgcaption{#1}}
+\define@key{rowkeys}{llabel} {\def\leftimglabel{#1}}
+\define@key{rowkeys}{rname}{\def\rightimgname{#1}}
+\define@key{rowkeys}{rcaption}{\def\rightimgcaption{#1}}
+\define@key{rowkeys}{rlabel} {\def\rightimglabel{#1}}
+\define@key{rowkeys}{imgcaption}{\def\fullimgcaption{#1}}
+\define@key{rowkeys}{imglabel}{\def\fullimglabel{#1}}
+\define@key{tblkeys}{tableone}{\def\tblone{#1}}
+\define@key{tblkeys}{tabletwo}{\def\tbltwo{#1}}
+\define@key{tblkeys}{caption}{\def\tblcap{#1}}
+\define@key{tblkeys}{label}{\def\tbllab{#1}}
+\define@key{mykeys}{a}[]{\def\myparamone{#1}}
+\define@key{mykeys}{b}[]{\def\myparamtwo{#1}}
+\define@key{mykeys}{c}[]{\def\myparamthree{#1}}
+\define@key{mykeys}{d}[]{\def\myparamfour{#1}}
+\define@key{mykeys}{e}[]{\def\myparamfive{#1}}
+\define@key{mykeys}{f}[]{\def\myparamsix{#1}}
+\define@key{mykeys}{g}[]{\def\myparamseven{#1}}
+\define@key{mykeys}{h}[]{\def\myparameight{#1}}
+\define@key{mykeys}{i}[]{\def\myparamnine{#1}} 
 
 \newcommand{\eqdef}[1]{%
 \setkeys{mykeys}{param1=, param2=, param3=, param4=, param5=, param6=, param7=, param8=, param9=}
@@ -44,8 +67,58 @@ where:
 
 \newcommand{\img}[1]{%
 \setkeys{imgkeys}{#1} %
-\begin{figure}[h] \centering \includegraphics[width= \imgwidth, keepaspectratio]{\imgname} \captionsetup{justification=centering} \caption{\imgcaption} \label{\imglabel} \end{figure} } \newcommand{\eq}[2]{\begin{equation} \label{#2} #1 \end{equation}} \newcommand{\p}[0]{ \noindent } \newcommand{\pb}[0]{\vfill \pagebreak} \newcommand{\imgrow}[8]{%
+\begin{figure}[h]
+\centering
+\includegraphics[width= \imgwidth, keepaspectratio]{\imgname}
+\captionsetup{justification=centering}
+\caption{\imgcaption} \label{\imglabel}
+\end{figure} } 
+
+\newcommand{\eq}[2]{ \begin{equation} \label{#2} #1 \end{equation} }
+
+\newcommand{\p}[0]{ \noindent }
+
+\newcommand{\pb}[0]{\vfill \pagebreak}
+
+\newcommand{\imgrow}[8]{%
 \setkeys{rowkeys}{#1} %  
-\begin{figure}[h] \centering \begin{subfigure}{0.45\textwidth} \centering \includegraphics[width=\linewidth]{\leftimgname} \captionsetup{justification=centering} \caption{\leftimgcaption} \label{\leftimglabel} \end{subfigure} \begin{subfigure}{0.45\textwidth} \centering \includegraphics[width=\linewidth]{\rightimgname} \captionsetup{justification=centering} \caption{\rightimgcaption} \label{\rightimglabel} \end{subfigure} \captionsetup{justification=centering} \caption{\fullimgcaption} \label{\fullimglabel} \end{figure} } \newcommand{\tablerow}[1]{%
+\begin{figure}[h]
+\centering
+\begin{subfigure}{0.45\textwidth}
+\centering
+\includegraphics[width=\linewidth]{\leftimgname}
+\captionsetup{justification=centering}
+\caption{\leftimgcaption}
+\label{\leftimglabel}
+\end{subfigure}
+\begin{subfigure}{0.45\textwidth}
+\centering
+\includegraphics[width=\linewidth]{\rightimgname}
+\captionsetup{justification=centering}
+\caption{\rightimgcaption}
+\label{\rightimglabel}
+\end{subfigure}
+\captionsetup{justification=centering}
+\caption{\fullimgcaption}
+\label{\fullimglabel}
+\end{figure} }
+
+\newcommand{\tablerow}[1]{%
 \setkeys{tblkeys}{#1} %
-\begin{figure} \begin{subfigure}{0.5\linewidth} \centering \captionsetup{justification=centering} \tblone \end{subfigure} \begin{subfigure}{0.5\linewidth}    \centering \captionsetup{justification=centering} \tbltwo \end{subfigure} \captionsetup{justification=centering} \caption{\tblcap} \label{\tbllab} \end{figure} } \makeatother
+\begin{figure
+\begin{subfigure}{0.5\linewidth}
+\centering
+\captionsetup{justification=centering}
+\tblone
+\end{subfigure}
+\begin{subfigure}{0.5\linewidth}
+\centering
+\captionsetup{justification=centering}
+\tbltwo
+\end{subfigure}
+\captionsetup{justification=centering}
+\caption{\tblcap}
+\label{\tbllab}
+\end{figure} }
+
+\makeatother
