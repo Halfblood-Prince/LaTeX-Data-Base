@@ -49,8 +49,8 @@
 \define@key{eqnkeys}{i}[]{\def\myparamnine{#1}}
 
 \newcommand{\eqdef}[1]{%
-\setkeys{mykeys}{a=, b=, c=, d=, e=, f=, g=, h=, i=}
-\setkeys{mykeys}{#1}
+\setkeys{eqnkeys}{a=, b=, c=, d=, e=, f=, g=, h=, i=}
+\setkeys{eqnkeys}{#1}
 where:
 \begin{itemize}
 \ifx\myparamone\empty\else \item \myparamone \fi
@@ -63,7 +63,7 @@ where:
 \ifx\myparameight\empty\else \item \myparameight \fi
 \ifx\myparamnine\empty\else \item \myparamnine \fi
 \end{itemize}
-\setkeys{mykeys}{a=, b=, c=, d=, e=, f=, g=, h=, i=} }
+\setkeys{eqnkeys}{a=, b=, c=, d=, e=, f=, g=, h=, i=} }
 
 \newcommand{\img}[1]{%
 \setkeys{imgkeys}{#1} %
