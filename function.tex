@@ -38,6 +38,7 @@
 \define@key{tblkeys}{tabletwo}{\def\tbltwo{#1}}
 \define@key{tblkeys}{caption}{\def\tblcap{#1}}
 \define@key{tblkeys}{label}{\def\tbllab{#1}}
+
 \define@key{mykeys}{a}[]{\def\myparamone{#1}}
 \define@key{mykeys}{b}[]{\def\myparamtwo{#1}}
 \define@key{mykeys}{c}[]{\def\myparamthree{#1}}
@@ -46,10 +47,10 @@
 \define@key{mykeys}{f}[]{\def\myparamsix{#1}}
 \define@key{mykeys}{g}[]{\def\myparamseven{#1}}
 \define@key{mykeys}{h}[]{\def\myparameight{#1}}
-\define@key{mykeys}{i}[]{\def\myparamnine{#1}} 
+\define@key{mykeys}{i}[]{\def\myparamnine{#1}}
 
 \newcommand{\eqdef}[1]{%
-\setkeys{mykeys}{param1=, param2=, param3=, param4=, param5=, param6=, param7=, param8=, param9=}
+\setkeys{mykeys}{a=, b=, c=, d=, e=, f=, g=, h=, i=}
 \setkeys{mykeys}{#1}
 where:
 \begin{itemize}
@@ -63,7 +64,7 @@ where:
 \ifx\myparameight\empty\else \item \myparameight \fi
 \ifx\myparamnine\empty\else \item \myparamnine \fi
 \end{itemize}
-\setkeys{mykeys}{param1=, param2=, param3=, param4=, param5=, param6=, param7=, param8=, param9=} }
+\setkeys{mykeys}{a=, b=, c=, d=, e=, f=, g=, h=, i=} }
 
 \newcommand{\img}[1]{%
 \setkeys{imgkeys}{#1} %
