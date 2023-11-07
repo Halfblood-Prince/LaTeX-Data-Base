@@ -1,12 +1,12 @@
-% Release Notes for LaTeX Application Programming Interface (API) v 6.2.4 %
+% Release Notes for LaTeX Application Programming Interface (API) v 7.1.0 %
 
 % Initial release: 03-11-2023 %
-% Last Update: 06-11-2023 %
+% Last Update: 07-11-2023 %
 % Library of functions that can be used to cutshort long lines of codes %
 
-% Disclaimer: Latex API v6.2.4 %
+% Disclaimer: Latex API v7.1.0 %
 
-% By using Latex API version 6.2.4, you acknowledge and agree to the following terms and conditions: %
+% By using Latex API version 7.1.0, you acknowledge and agree to the following terms and conditions: %
 
 % 1. Limited License: LaTeX Application Programming Interface (API) © 2023 by Akhil S Kumar is licensed under Attribution-NonCommercial-NoDerivatives 4.0 International (CC-BY-NC-ND). To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/. This license grants you the right to access and use the API for the sole purpose of document creation and rendering. %
 
@@ -22,8 +22,9 @@
 
 
 \makeatletter
-\define@key{imgkeys}{name}{\def\imgname{#1}} \define@key{imgkeys}{width}{\def\imgwidth{#1}} \define@key{imgkeys}{caption}{\def\imgcaption{#1}} \define@key{imgkeys}{label}{\def\imglabel{#1}} \define@key{rowkeys}{lname}{\def\leftimgname{#1}} \define@key{rowkeys}{lcaption}{\def\leftimgcaption{#1}} \define@key{rowkeys}{llabel} {\def\leftimglabel{#1}} \define@key{rowkeys}{rname}{\def\rightimgname{#1}} \define@key{rowkeys}{rcaption}{\def\rightimgcaption{#1}} \define@key{rowkeys}{rlabel} {\def\rightimglabel{#1}} \define@key{rowkeys}{imgcaption}{\def\fullimgcaption{#1}} \define@key{rowkeys}{imglabel}{\def\fullimglabel{#1}} \define@key{tblkeys}{tableone}{\def\tblone{#1}} \define@key{tblkeys}{tabletwo}{\def\tbltwo{#1}} \define@key{tblkeys}{caption}{\def\tblcap{#1}} \define@key{tblkeys}{label}{\def\tbllab{#1}} \define@key{eqnkeys}{a}[]{\def\myparamone{#1}} \define@key{eqnkeys}{b}[]{\def\myparamtwo{#1}} \define@key{eqnkeys}{c}[]{\def\myparamthree{#1}} \define@key{eqnkeys}{d}[]{\def\myparamfour{#1}} \define@key{eqnkeys}{e}[]{\def\myparamfive{#1}} \define@key{eqnkeys}{f}[]{\def\myparamsix{#1}} \define@key{eqnkeys}{g}[]{\def\myparamseven{#1}} \define@key{eqnkeys}{h}[]{\def\myparameight{#1}} \define@key{eqnkeys}{i}[]{\def\myparamnine{#1}} \newcommand{\eqvar}[1]{%
-\setkeys{eqnkeys}{a=, b=, c=, d=, e=, f=, g=, h=, i=} \setkeys{eqnkeys}{#1} where: \begin{itemize}
+\define@key{imgkeys}{name}{\def\imgname{#1}} \define@key{imgkeys}{width}{\def\imgwidth{#1}} \define@key{imgkeys}{caption}{\def\imgcaption{#1}} \define@key{imgkeys}{label}{\def\imglabel{#1}} \define@key{rowkeys}{lname}{\def\leftimgname{#1}} \define@key{rowkeys}{lcaption}{\def\leftimgcaption{#1}} \define@key{rowkeys}{llabel} {\def\leftimglabel{#1}} \define@key{rowkeys}{rname}{\def\rightimgname{#1}} \define@key{rowkeys}{rcaption}{\def\rightimgcaption{#1}} \define@key{rowkeys}{rlabel} {\def\rightimglabel{#1}} \define@key{rowkeys}{imgcaption}{\def\fullimgcaption{#1}} \define@key{rowkeys}{imglabel}{\def\fullimglabel{#1}} \define@key{tblkeys}{tableone}{\def\tblone{#1}} \define@key{tblkeys}{tabletwo}{\def\tbltwo{#1}} \define@key{tblkeys}{caption}{\def\tblcap{#1}} \define@key{tblkeys}{label}{\def\tbllab{#1}} \define@key{eqnkeys}{a}[]{\def\myparamone{#1}} \define@key{eqnkeys}{b}[]{\def\myparamtwo{#1}} \define@key{eqnkeys}{c}[]{\def\myparamthree{#1}} \define@key{eqnkeys}{d}[]{\def\myparamfour{#1}} \define@key{eqnkeys}{e}[]{\def\myparamfive{#1}} \define@key{eqnkeys}{f}[]{\def\myparamsix{#1}} \define@key{eqnkeys}{g}[]{\def\myparamseven{#1}} \define@key{eqnkeys}{h}[]{\def\myparameight{#1}} \define@key{eqnkeys}{i}[]{\def\myparamnine{#1}} \define@key{eqnkeys}{eq}[]{\def\myequation{#1}} \define@key{eqnkeys}{label}[]{\def\myequationlabel{#1}} \newcommand{\eqvar}[1]{%
+\setkeys{eqnkeys}{a=, b=, c=, d=, e=, f=, g=, h=, i=} \setkeys{eqnkeys}{#1}
+\begin{equation} \myequation  \label{\myequationlabel} \end{equation} where: \begin{itemize}
 \ifx\myparamone\empty\else \item \myparamone \fi
 \ifx\myparamtwo\empty\else \item \myparamtwo \fi
 \ifx\myparamthree\empty\else \item \myparamthree \fi
