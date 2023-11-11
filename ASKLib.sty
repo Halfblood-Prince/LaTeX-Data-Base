@@ -1,0 +1,24 @@
+% Release Notes for LaTeX Application Programming Interface (API) v 9.1.0 %
+
+% Created by: Akhil Shimna Kumar %
+% Initial release: 03-11-2023 %
+% Last Update: 11-11-2023 %
+
+% Disclaimer: Latex API v 9.1.0 %
+
+% By using Latex API version 9.1.0, you acknowledge and agree to the following terms and conditions: %
+
+% 1. Limited License: LaTeX Application Programming Interface (API) © 2023 by Akhil S Kumar is licensed under Attribution-NonCommercial-NoDerivatives 4.0 International (CC-BY-NC-ND). To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/. This license grants you the right to access and use the API for the sole purpose of document creation and rendering. %
+
+% 2. Ownership: Latex API, including all intellectual property rights, remains the exclusive property of the creator. You do not acquire any ownership or proprietary interest in the API, its codebase, or associated documentation. %
+
+% 3. Usage Restrictions: You agree not to reverse engineer, decompile, or disassemble the Latex API, or attempt to derive its source code. Unauthorized use or distribution of the API is strictly prohibited. This API is created for use only within Group E02A. No one outside of Group E02A is permitted to use this in their LaTeX Project Report. Group E02A asserts the rights to use this API in their LaTeX reports. Use by anyone outside Group E02A is prohibitted. No part of this API should be modified or used for any other purpose without the consent of the creator of this code %
+
+% 4. No Warranty: Latex API is provided "as is" without any warranty, express or implied. I do not guarantee the accuracy, reliability, or suitability of the API for any particular purpose. Your use of the API is at your own risk. %
+
+% 5. Limitation of Liability: In no event shall the creator of Latex API be liable for any direct, indirect, incidental, special, exemplary, or consequential damages arising out of the use or inability to use the API, even if advised of the possibility of such damages. %
+
+% 6. Modifications: I reserve the right to modify, suspend, or discontinue the Latex API at any time, with or without notice. I may also update these terms, and it is your responsibility to review them periodically. %
+
+
+\ProvidesPackage{ASKLib} \RequirePackage{graphicx} \RequirePackage{keyval} \RequirePackage{booktabs} \RequirePackage{subcaption} \define@key{imgkeys}{name}{\def\imgname{#1}} \define@key{imgkeys}{width}{\def\imgwidth{#1}} \define@key{imgkeys}{caption} {\def\cap{#1}} \define@key{imgkeys}{label}{\def\lbl{#1}} \newcommand{\img}[1]{ \setkeys{imgkeys}{width=, caption=, label=} \setkeys{imgkeys}{#1} \begin{figure}[h] \centering \ifx\imgwidth\empty \def\imgwidth{\linewidth} \else \fi \includegraphics[width= \imgwidth, keepaspectratio]{\imgname} \captionsetup{justification=centering} \ifx\cap\empty\else \caption{\cap} \fi \ifx\lbl\empty\else \label{\lbl} \fi \end{figure} \setkeys{imgkeys}{name=, width=, caption=, label=} } \newcommand{\p}[0]{ \noindent } \newcommand{\pb}[0]{ \vfill \pagebreak } \newcommand{\eq}[2]{ \begin{equation} \label{#2} #1 \end{equation} } \define@key{eqnkeys}{a}[]{\def\myparamone{#1}} \define@key{eqnkeys}{b}[]{\def\myparamtwo{#1}} \define@key{eqnkeys}{c}[]{\def\myparamthree{#1}} \define@key{eqnkeys}{d}[]{\def\myparamfour{#1}} \define@key{eqnkeys}{e}[]{\def\myparamfive{#1}} \define@key{eqnkeys}{f}[]{\def\myparamsix{#1}} \define@key{eqnkeys}{g}[]{\def\myparamseven{#1}} \define@key{eqnkeys}{h}[]{\def\myparameight{#1}} \define@key{eqnkeys}{i}[]{\def\myparamnine{#1}} \newcommand{\eqvar}[1]{ \setkeys{eqnkeys}{a=, b=, c=, d=, e=, f=, g=, h=, i=} \setkeys{eqnkeys}{#1} where: \begin{itemize} \ifx\myparamone\empty\else \item \myparamone \fi \ifx\myparamtwo\empty\else \item \myparamtwo \fi \ifx\myparamthree\empty\else \item \myparamthree \fi \ifx\myparamfour\empty\else \item \myparamfour \fi \ifx\myparamfive\empty\else \item \myparamfive \fi \ifx\myparamsix\empty\else \item \myparamsix \fi \ifx\myparamseven\empty\else \item \myparamseven \fi \ifx\myparameight\empty\else \item \myparameight \fi \ifx\myparamnine\empty\else \item \myparamnine \fi \end{itemize} \setkeys{eqnkeys}{a=, b=, c=, d=, e=, f=, g=, h=, i=} }
