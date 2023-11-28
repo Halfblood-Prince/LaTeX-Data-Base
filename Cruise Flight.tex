@@ -5,96 +5,26 @@
 
 \p For a steady and horizontal cruise flight, thrust provided by the propeller is equal to the total drag force acting on the aircraft. So,
 
-\eq{
-D \ = \ T \ = \ C_D \cdot \frac{1}{2} \cdot \rho \cdot V^2 \cdot S
-}{eq:Drag}
-
-\eq{
-P_{prop} \ = \ D \cdot V \ = \ C_D \cdot \frac{1}{2} \cdot \rho \cdot V^3 \cdot S
-}{eq:P required}
-
-\[
-V \ = \ \sqrt{\frac{2W}{S \cdot \rho \cdot C_L }}
-\]
-
-\[
-P_{prop} \ = \  C_D \cdot \frac{1}{2} \cdot \rho \cdot \left(\frac{2W}{S \cdot \rho \cdot C_L }\right)^{1.5} \cdot S
-\]
-
-
-
-\[
-P_{prop} = C_D \cdot \frac{1}{2} \cdot \rho \cdot \left(\frac{2g(M_{structure} + M_{camera} + M_{battery} + M_{solar})}{S \cdot \rho \cdot C_L} \right)^{1.5} \cdot S
-\]
-
-\[ M_{structure} \ = \ 0.25 \ kg \]
-\[ M_{camera} \ = \ 1 \ kg \]
-\[ C_D \ = \ 0.044039 \]
-\[ C_L \ = \ 1.223509 \]
-\[ \rho \ at \ 1500m \ altitude \ = \ 0.01322573918915 \ kg/m^3 \]
-\[S \ = \ ( b \cdot c ) \ + \ 0.3 \ m^2 \ = \ 1.5 \ m^2\]
-\[g \ = \ 3.711 \ m/s^2 \]
+\eq{ D \ = \ T \ = \ C_D \cdot \frac{1}{2} \cdot \rho \cdot V^2 \cdot S }{eq:Drag} \eq{ P_{prop} \ = \ D \cdot V \ = \ C_D \cdot \frac{1}{2} \cdot \rho \cdot V^3 \cdot S }{eq:P required} \[ V \ = \ \sqrt{\frac{2W}{S \cdot \rho \cdot C_L }} \] \[ P_{prop} \ = \  C_D \cdot \frac{1}{2} \cdot \rho \cdot \left(\frac{2W}{S \cdot \rho \cdot C_L }\right)^{1.5} \cdot S \] \[ P_{prop} = C_D \cdot \frac{1}{2} \cdot \rho \cdot \left(\frac{2g(M_{structure} + M_{camera} + M_{battery} + M_{solar})}{S \cdot \rho \cdot C_L} \right)^{1.5} \cdot S \] \[ M_{structure} \ = \ 0.25 \ kg \] \[ M_{camera} \ = \ 1 \ kg \] \[ C_D \ = \ 0.044039 \] \[ C_L \ = \ 1.223509 \] \[ \rho \ at \ 1500m \ altitude \ = \ 0.01322573918915 \ kg/m^3 \] \[S \ = \ ( b \cdot c ) \ + \ 0.3 \ m^2 \ = \ 1.5 \ m^2\] \[g \ = \ 3.711 \ m/s^2 \] 
 
 Substituting these values:
 
-\[
-P_{prop} = 0.044039 \cdot \frac{1}{2} \cdot 0.01322573918915 \cdot \left(\frac{2 \cdot 3.711 \cdot (0.25 + 1 + M_{battery} + M_{solar})}{1.5 \cdot 0.01322573918915 \cdot 1.223509} \right)^{1.5} \cdot 1.5
-\]
-
-
-\[
-P_{prop} = 0.000436836 \cdot \left(\frac{7.422 \cdot (1.25 + M_{battery} + M_{solar})}{ 0.024272716 } \right)^{1.5}
-\]
-
-\eq{ 
-P_{prop} = 2.336 \cdot (1.25 + M_{battery} + M_{solar})^{1.5}
-}{eq:p prop}
-
-
-
-
+\[ P_{prop} = 0.044039 \cdot \frac{1}{2} \cdot 0.01322573918915 \cdot \left(\frac{2 \cdot 3.711 \cdot (0.25 + 1 + M_{battery} + M_{solar})}{1.5 \cdot 0.01322573918915 \cdot 1.223509} \right)^{1.5} \cdot 1.5 \] \[ P_{prop} = 0.000436836 \cdot \left(\frac{7.422 \cdot (1.25 + M_{battery} + M_{solar})}{ 0.024272716 } \right)^{1.5} \] \eq{ P_{prop} = 2.336 \cdot (1.25 + M_{battery} + M_{solar})^{1.5} }{eq:p prop} 
 
 \section{For operating at night:}
 
-\p When the aircraft is operating at night, the on-board battery must be able to provide enough power to compensate for the low efficiency of the propeller and it has to support the communication systems. \\
-
-\p So,
-
-\[
-P_{required | night} = P_{prop} \cdot \frac{1}{\eta_j} \cdot \frac{1}{\eta_{motor}} + P_{communication}
-\]
-
-\[
-P_{required | night} = P_{prop} \cdot \frac{100}{87} \cdot \frac{100}{79} + P_{communication}
-\]
-
-\[
-P_{required | night} = P_{prop} \cdot \frac{100}{87} \cdot \frac{100}{79} + 5 \quad [W]
-\]
-
-\[
-P_{required | night} = 1.454968718 \cdot P_{prop} + 5 \quad [W]
-\]
-
-\[
-E_{required | night} = P_{required | night} \times Duration \ of \ night
-\]
+\p When the aircraft is operating at night, the on-board battery must be able to provide enough power to compensate for the low efficiency of the propeller and it has to support the communication systems. \\ \p So, \[ P_{required | night} = P_{prop} \cdot \frac{1}{\eta_j} \cdot \frac{1}{\eta_{motor}} + P_{communication}
+\] \[ P_{required | night} = P_{prop} \cdot \frac{100}{87} \cdot \frac{100}{79} + P_{communication} \] \[ P_{required | night} = P_{prop} \cdot \frac{100}{87} \cdot \frac{100}{79} + 5 \quad [W] \] \[ P_{required | night} = 1.454968718 \cdot P_{prop} + 5 \quad [W] \] \[ E_{required | night} = P_{required | night} \times Duration \ of \ night \]
 
 Given:
 
-\[
-Duration \ of \ night \ = \ 13.2 \ hr
-\]
+\[ Duration \ of \ night \ = \ 13.2 \ hr \]
 
 Substituting that in the above equation,
 
-\[
-E_{required | night} = (1.454968718 \cdot P_{prop} + 5) \times 13.2 \quad [Whr]
-\]
+\[ E_{required | night} = (1.454968718 \cdot P_{prop} + 5) \times 13.2 \quad [Whr] \]
 
-\[
-E_{required | night} = 19.206 \cdot P_{prop} + 6 \quad [Whr]
-\]
+\[ E_{required | night} = 19.206 \cdot P_{prop} + 6 \quad [Whr] \]
 
 
 \p During the night operation, the whole energy is supplied by the on-board battery. So, the energy available in the battery must be equal to that of the energy required for the night operation. Also, it is given that the energy density of the battery is $ 200 \ Wh/kg $. From that, the mass of the battery can be calculated as:
@@ -291,29 +221,14 @@ P_{required | night} = 1.454968718 \cdot 6.325 + 5 \quad [W]
 \]
 \begin{center} \boxed{P_{\text{{required|night}}} = 14.207 \, \text{[W]}} \end{center} \vspace{1cm}
 
-\p \textbf{The surface area of the solar cell needed:} \vspace{0.1cm}\\
-It was proved earlier that: \[ A_{solar} \ = \ \frac{ 3.137 \cdot P_{prop} + 17.28 }{ 215.157 } \quad [m^2] \]
+\p \textbf{The surface area of the solar cell needed:} \vspace{0.1cm}\\ It was proved earlier that: \[ A_{solar} \ = \ \frac{ 3.137 \cdot P_{prop} + 17.28 }{ 215.157 } \quad [m^2] \]
 
 Substituting the value of $ P_{prop} $ into the equation and solving it, \[ A_{solar} \ = \ \frac{ 3.137 \cdot 6.325 + 17.28 }{ 215.157 } \quad [m^2] \] \begin{center} \boxed{A_{\text{{solar}}} = 0.1725 \, \text{[$m^2$]}} \end{center} \vspace{1cm}
 
-\p \textbf{The total mass of the solar cell needed:} \vspace{0.1cm}\\
-It was proved earlier that:
-\[
-M_{solar} = \ 0.0047 P_{prop} + 0.0257  \quad [kg]
-\]
+\p \textbf{The total mass of the solar cell needed:} \vspace{0.1cm}\\ It was proved earlier that: \[ M_{solar} = \ 0.0047 P_{prop} + 0.0257  \quad [kg] \]
 
 Substituting the value of $ P_{prop} $ into the equation and solving it, \[ M_{solar} = \ 0.0047 \cdot 6.325 + 0.0257  \quad [kg] \] \begin{center} \boxed{M_{\text{{solar}}} = 0.0554 \, \text{[kg]}} \end{center} \vspace{1cm}
 
-\p \textbf{The total mass of the battery needed:} \vspace{0.1cm}\\
-It was proved earlier that:
-\[
-M_{battery} \ = \ \frac{ 19.206 \cdot P_{prop} + 6 }{ 200 }
-\]
+\p \textbf{The total mass of the battery needed:} \vspace{0.1cm}\\ It was proved earlier that: \[ M_{battery} \ = \ \frac{ 19.206 \cdot P_{prop} + 6 }{ 200 } \]
 
-Substituting the value of $ P_{prop} $ into the equation and solving it,
-\[
-M_{battery} \ = \ \frac{ 19.206 \cdot 6.325 + 6 }{ 200 }
-\]
-\begin{center}
-  \boxed{M_{\text{{battery}}} = 0.6374 \, \text{[kg]}}
-\end{center}
+Substituting the value of $ P_{prop} $ into the equation and solving it, \[ M_{battery} \ = \ \frac{ 19.206 \cdot 6.325 + 6 }{ 200 } \] \begin{center}   \boxed{M_{\text{{battery}}} = 0.6374 \, \text{[kg]}} \end{center}
