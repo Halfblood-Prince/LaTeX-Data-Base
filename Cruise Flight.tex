@@ -5,13 +5,13 @@
 
 \p For a steady and horizontal cruise flight, thrust provided by the propeller is equal to the total drag force acting on the aircraft. So,
 
-\[
+\eq{
 D \ = \ T \ = \ C_D \cdot \frac{1}{2} \cdot \rho \cdot V^2 \cdot S
-\]
+}{eq:Drag}
 
-\[
+\eq{
 P_{prop} \ = \ D \cdot V \ = \ C_D \cdot \frac{1}{2} \cdot \rho \cdot V^3 \cdot S
-\]
+}{eq:P required}
 
 \[
 V \ = \ \sqrt{\frac{2W}{S \cdot \rho \cdot C_L }}
@@ -265,12 +265,7 @@ P_{prop} = 2.336 \cdot (1.25 + \ \ 0.096 \cdot P_{prop} + 0.03 \ + \ 0.0047 P_{p
 P_{prop} = 2.336 \cdot ( 0.1007 \cdot P_{prop} + 1.3057 )^{1.5}
 \]
 
-Solving the above equation:
-\begin{center}
-  \boxed{P_{\text{prop}} = 6.325 \, \text{[W]}}
-\end{center}
-
-\vspace{1cm}
+Solving the above equation: \begin{center} \boxed{P_{\text{prop}} = 6.325 \, \text{[W]}} \end{center} \vspace{1cm}
 
 \p \textbf{The power that needs to be delivered during the day (camera operating):} \vspace{0.1cm}\\
 It was proved earlier that:
@@ -281,11 +276,7 @@ Substituting the value of $ P_{prop} $ into the equation and solving it,
 \[
 P_{required|day} = 3.137 \cdot 6.325 + 17.28 \quad [W]
 \]
-\begin{center}
-  \boxed{P_{\text{{required|day}}} = 37.122 \, \text{[W]}}
-\end{center}
-
-\vspace{1cm}
+\begin{center} \boxed{P_{\text{{required|day}}} = 37.122 \, \text{[W]}} \end{center} \vspace{1cm}
 
 \p \textbf{The power that needs to be delivered during the night (camera not operating):} \vspace{0.1cm}\\
 It was proved earlier that:
@@ -298,27 +289,12 @@ Substituting the value of $ P_{prop} $ into the equation and solving it,
 \[
 P_{required | night} = 1.454968718 \cdot 6.325 + 5 \quad [W]
 \]
-\begin{center}
-  \boxed{P_{\text{{required|night}}} = 14.207 \, \text{[W]}}
-\end{center}
-
-\vspace{1cm}
+\begin{center} \boxed{P_{\text{{required|night}}} = 14.207 \, \text{[W]}} \end{center} \vspace{1cm}
 
 \p \textbf{The surface area of the solar cell needed:} \vspace{0.1cm}\\
-It was proved earlier that:
-\[
-A_{solar} \ = \ \frac{ 3.137 \cdot P_{prop} + 17.28 }{ 215.157 } \quad [m^2]
-\]
+It was proved earlier that: \[ A_{solar} \ = \ \frac{ 3.137 \cdot P_{prop} + 17.28 }{ 215.157 } \quad [m^2] \]
 
-Substituting the value of $ P_{prop} $ into the equation and solving it,
-\[
-A_{solar} \ = \ \frac{ 3.137 \cdot 6.325 + 17.28 }{ 215.157 } \quad [m^2]
-\]
-\begin{center}
-  \boxed{A_{\text{{solar}}} = 0.1725 \, \text{[$m^2$]}}
-\end{center}
-
-\vspace{1cm}
+Substituting the value of $ P_{prop} $ into the equation and solving it, \[ A_{solar} \ = \ \frac{ 3.137 \cdot 6.325 + 17.28 }{ 215.157 } \quad [m^2] \] \begin{center} \boxed{A_{\text{{solar}}} = 0.1725 \, \text{[$m^2$]}} \end{center} \vspace{1cm}
 
 \p \textbf{The total mass of the solar cell needed:} \vspace{0.1cm}\\
 It was proved earlier that:
@@ -326,15 +302,7 @@ It was proved earlier that:
 M_{solar} = \ 0.0047 P_{prop} + 0.0257  \quad [kg]
 \]
 
-Substituting the value of $ P_{prop} $ into the equation and solving it,
-\[
-M_{solar} = \ 0.0047 \cdot 6.325 + 0.0257  \quad [kg]
-\]
-\begin{center}
-  \boxed{M_{\text{{solar}}} = 0.0554 \, \text{[kg]}}
-\end{center}
-
-\vspace{1cm}
+Substituting the value of $ P_{prop} $ into the equation and solving it, \[ M_{solar} = \ 0.0047 \cdot 6.325 + 0.0257  \quad [kg] \] \begin{center} \boxed{M_{\text{{solar}}} = 0.0554 \, \text{[kg]}} \end{center} \vspace{1cm}
 
 \p \textbf{The total mass of the battery needed:} \vspace{0.1cm}\\
 It was proved earlier that:
