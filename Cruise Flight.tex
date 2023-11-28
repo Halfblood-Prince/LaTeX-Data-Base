@@ -23,8 +23,6 @@ V \ = \ \sqrt{\frac{2W}{S \cdot \rho \cdot C_L }}
 P_{prop} \ = \  C_D \cdot \frac{1}{2} \cdot \rho \cdot \left(\frac{2W}{S \cdot \rho \cdot C_L }\right)^{1.5} \cdot S
 \]
 
-
-
 \[
 P_{prop} = C_D \cdot \frac{1}{2} \cdot \rho \cdot \left(\frac{2g(M_{structure} + M_{camera} + M_{battery} + M_{solar})}{S \cdot \rho \cdot C_L} \right)^{1.5} \cdot S
 \]
@@ -43,7 +41,6 @@ Substituting these values:
 P_{prop} = 0.044039 \cdot \frac{1}{2} \cdot 0.01322573918915 \cdot \left(\frac{2 \cdot 3.711 \cdot (0.25 + 1 + M_{battery} + M_{solar})}{1.5 \cdot 0.01322573918915 \cdot 1.223509} \right)^{1.5} \cdot 1.5
 \]
 
-
 \[
 P_{prop} = 0.000436836 \cdot \left(\frac{7.422 \cdot (1.25 + M_{battery} + M_{solar})}{ 0.024272716 } \right)^{1.5}
 \]
@@ -51,10 +48,6 @@ P_{prop} = 0.000436836 \cdot \left(\frac{7.422 \cdot (1.25 + M_{battery} + M_{so
 \eq{ 
 P_{prop} = 2.336 \cdot (1.25 + M_{battery} + M_{solar})^{1.5}
 }{eq:p prop}
-
-
-
-
 
 \section{For operating at night:}
 
@@ -101,7 +94,6 @@ E_{required | night} = 19.206 \cdot P_{prop} + 6 \quad [Whr]
 
 \p During the night operation, the whole energy is supplied by the on-board battery. So, the energy available in the battery must be equal to that of the energy required for the night operation. Also, it is given that the energy density of the battery is $ 200 \ Wh/kg $. From that, the mass of the battery can be calculated as:
 
-
 \[
 Mass \ of \ the \ battery \ = \ \frac{ E_{battery} }{ Energy \ density }
 \]
@@ -117,8 +109,6 @@ Distributing the denominator and simplyfing further:
 \eq{
 M_{battery} \ = \ 0.096 \cdot P_{prop} + 0.03
 }{eq:m bat}
-
-
 
 \section{For operating during the daytime:}
 
