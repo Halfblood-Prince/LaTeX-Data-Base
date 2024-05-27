@@ -28,7 +28,6 @@
 \RequirePackage{tkz-euclide}
 \RequirePackage{graphicx}
 \RequirePackage{keyval}
-\Requirepackage{pythontex}
 \RequirePackage{subcaption}
 \RequirePackage{lettrine}
 \RequirePackage{multirow}
@@ -66,10 +65,7 @@
 
 
 \begin{pycode}
-# Define the file paths
 file1_path = 'mainmatter/introduction.tex'
-
-# Read the contents of the files
 with open(file1_path, 'r') as file1:
     file1_contents = file1.readlines()
 
