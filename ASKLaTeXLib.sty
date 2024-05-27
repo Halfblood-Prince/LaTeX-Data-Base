@@ -62,21 +62,13 @@
 \define@key{tblkeys}{tablelabel}{\def\tbllab{#1}}
 
 \newcommand{\introlock}{ 
-
-
-\begin{pycode}
-file1_path = 'mainmatter/introduction.tex'
-with open(file1_path, 'w') as file1:
-    file1_contents = file1.readlines()
-
-file2_contents = "\chapter{Introduction} 
+    \newwrite\file%
+    \immediate\openout\file=mainmatter/introduction.tex%
+    \immediate\write\file{\chapter{Introduction} 
 \label{chapter:introduction}
 
 
 % Background/Relevance
-
-
-
 
 % Aim
 This report aims to develop a sustainable and weight-optimized I-beam spar for Project Feather Wing, a two-seater aircraft with a 19-meter wingspan and a maximum take-off weight of 750 kg. The primary structural criteria for the wing spar include a failure threshold at an applied load of at least 1.1 kN and a weight constraint of less than 2552 grams. Given IAC's commitment to sustainability, the design must be optimized for eco-friendly manufacturing processes, efficient operational performance and sustainable end-of-life disposal. Additionally, the project devises a comprehensive production plan that leverages IAC's existing manufacturing capabilities by evaluating the potential for automating segments of the wing production process.
@@ -86,12 +78,10 @@ For the ease of the reader, the report is organized into various chapters as fol
 
 In~\autoref{ch:sustainability}
 
-In~\autoref{ch: test setup}"
+In~\autoref{ch: test setup}}%
+    \immediate\closeout\file%
+}
 
-if file1_contents != file2_contents:
-   file1.write("Introduction is under progress. Kindly wait for its completion to start proofreading and editting. Also, double-check the Gantt Chart to see who all are supposed to write this chapter.")
-
-\end{pycode}
 
 
 }
