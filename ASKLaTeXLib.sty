@@ -61,34 +61,40 @@
 \define@key{tblkeys}{tablecaption}{\def\tblcap{#1}}
 \define@key{tblkeys}{tablelabel}{\def\tbllab{#1}}
 
-\newcommand{\introlock}{ 
-    \newwrite\file%
-    \immediate\openout\file=mainmatter/introduction.tex%
-    \immediate\write\file{\chapter{Introduction} 
-\label{chapter:introduction}
+
+\newcommand{\img}[1]{ \setkeys{imgkeys}{width=, caption=, label=} \setkeys{imgkeys}{#1} \begin{figure}[htbp] \centering \ifx\imgwidth\empty \def\imgwidth{\linewidth} \else \fi \includegraphics[width= \imgwidth, keepaspectratio]{\imgname} \captionsetup{justification=centering} \ifx\cap\empty\else \caption{\cap} \fi \ifx\lbl\empty\else \label{\lbl} \fi \end{figure} \setkeys{imgkeys}{name=, width=, caption=, label=} } \newcommand{\fig}[1]{ \setkeys{imgkeys}{width=, caption=, label=} \setkeys{imgkeys}{#1} \begin{figure}[h] \centering \ifx\imgwidth\empty \def\imgwidth{\linewidth} \else \fi \imgname \captionsetup{justification=centering} \ifx\cap\empty\else \caption{\cap} \fi \ifx\lbl\empty\else \label{\lbl} \fi \end{figure} \setkeys{imgkeys}{name=, width=, caption=, label=} } \newcommand{\p}[0]{ \noindent } \newcommand{\pb}[0]{ \vfill \pagebreak } \newcommand{\eqvar}[1]{ \setkeys{eqnkeys}{a=, b=, c=, d=, e=, f=, g=, h=, i=} \setkeys{eqnkeys}{#1} where: \begin{itemize} \ifx\myparamone\empty\else \item[] \myparamone \fi \ifx\myparamtwo\empty\else \item[] \myparamtwo \fi \ifx\myparamthree\empty\else \item[] \myparamthree \fi \ifx\myparamfour\empty\else \item[] \myparamfour \fi \ifx\myparamfive\empty\else \item[] \myparamfive \fi \ifx\myparamsix\empty\else \item[] \myparamsix \fi \ifx\myparamseven\empty\else \item[] \myparamseven \fi \ifx\myparameight\empty\else \item[] \myparameight \fi \ifx\myparamnine\empty\else \item[] \myparamnine \fi \end{itemize} \setkeys{eqnkeys}{a=, b=, c=, d=, e=, f=, g=, h=, i=} }
 
 
-% Background/Relevance
+\newcommand{\imgrow}[1]
+{
+\setkeys{rowkeys}{#1}
 
-% Aim
-This report aims to develop a sustainable and weight-optimized I-beam spar for Project Feather Wing, a two-seater aircraft with a 19-meter wingspan and a maximum take-off weight of 750 kg. The primary structural criteria for the wing spar include a failure threshold at an applied load of at least 1.1 kN and a weight constraint of less than 2552 grams. Given IAC's commitment to sustainability, the design must be optimized for eco-friendly manufacturing processes, efficient operational performance and sustainable end-of-life disposal. Additionally, the project devises a comprehensive production plan that leverages IAC's existing manufacturing capabilities by evaluating the potential for automating segments of the wing production process.
 
-% Structure
-For the ease of the reader, the report is organized into various chapters as follows. The~\autoref{ch:LitStud} of this report is dedicated to exploring the background information on wing spars, viz. its structural and functional uses, its lifecycle, operating conditions, loads experienced during operation, modes of structural failure, safety factor in design, comparison of robotic production to manual labor and the effect of stress concentration and shear buckling on the structural integrity of the spar. Moving forward,~\autoref{ch:Design} delves into the minute intricacies of designing the wing spar, like static analysis and stress analysis, aiming to enhance performance and reliability of the spar during operation.
 
-In~\autoref{ch:sustainability}
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{\leftimgname}
+        \caption{\leftimgcaption}
+        \label{\leftimglabel}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{\rightimgname}
+        \caption{\rightimgcaption}
+        \label{\rightimglabel}
+    \end{subfigure}
+    \caption{\fullimgcaption}
+    \label{\fullimglabel}
+\end{figure}
 
-In~\autoref{ch: test setup}}%
-    \immediate\closeout\file%
 }
 
 
 
-}
 
 
 
-
-
-
-\newcommand{\img}[1]{ \setkeys{imgkeys}{width=, caption=, label=} \setkeys{imgkeys}{#1} \begin{figure}[htbp] \centering \ifx\imgwidth\empty \def\imgwidth{\linewidth} \else \fi \includegraphics[width= \imgwidth, keepaspectratio]{\imgname} \captionsetup{justification=centering} \ifx\cap\empty\else \caption{\cap} \fi \ifx\lbl\empty\else \label{\lbl} \fi \end{figure} \setkeys{imgkeys}{name=, width=, caption=, label=} } \newcommand{\fig}[1]{ \setkeys{imgkeys}{width=, caption=, label=} \setkeys{imgkeys}{#1} \begin{figure}[h] \centering \ifx\imgwidth\empty \def\imgwidth{\linewidth} \else \fi \imgname \captionsetup{justification=centering} \ifx\cap\empty\else \caption{\cap} \fi \ifx\lbl\empty\else \label{\lbl} \fi \end{figure} \setkeys{imgkeys}{name=, width=, caption=, label=} } \newcommand{\p}[0]{ \noindent } \newcommand{\pb}[0]{ \vfill \pagebreak } \newcommand{\eqvar}[1]{ \setkeys{eqnkeys}{a=, b=, c=, d=, e=, f=, g=, h=, i=} \setkeys{eqnkeys}{#1} where: \begin{itemize} \ifx\myparamone\empty\else \item[] \myparamone \fi \ifx\myparamtwo\empty\else \item[] \myparamtwo \fi \ifx\myparamthree\empty\else \item[] \myparamthree \fi \ifx\myparamfour\empty\else \item[] \myparamfour \fi \ifx\myparamfive\empty\else \item[] \myparamfive \fi \ifx\myparamsix\empty\else \item[] \myparamsix \fi \ifx\myparamseven\empty\else \item[] \myparamseven \fi \ifx\myparameight\empty\else \item[] \myparameight \fi \ifx\myparamnine\empty\else \item[] \myparamnine \fi \end{itemize} \setkeys{eqnkeys}{a=, b=, c=, d=, e=, f=, g=, h=, i=} } \newcommand{\customtableofcontents}{  \addtocontents{toc}{\protect\setcounter{tocdepth}{-1}} \tableofcontents \addtocontents{toc}{\protect\setcounter{tocdepth}{2}} } \newcommand{\imgtestinstruments}{ \centering \begin{subfigure}[b]{0.3\textwidth} \centering \includegraphics[width=\textwidth]{figures/LC.jpg} \caption{S-Shaped Load Cell~\cite{BOSCHEGmbHCo.KG2024S-ShapedCell}} \label{fig:LC} \end{subfigure} \hfill \begin{subfigure}[b]{0.3\textwidth} \centering \includegraphics[width=\textwidth]{figures/LDS.jpeg} \caption{Laser Displacement Sensor~\cite{ShenZhenCo.Ltd.2022LaserLDS}} \label{fig:LDS} \end{subfigure} \hfill \begin{subfigure}[b]{0.3\textwidth} \centering \includegraphics[width=\textwidth]{figures/SG.png} \caption{Strain Gauge~\cite{SilicaTechno2023StrainGauge}} \label{fig:SG} \end{subfigure} \caption{Test Instrumentation} \label{fig:testinstrumentation}}
+\newcommand{\customtableofcontents}{  \addtocontents{toc}{\protect\setcounter{tocdepth}{-1}} \tableofcontents \addtocontents{toc}{\protect\setcounter{tocdepth}{2}} } \newcommand{\imgtestinstruments}{ \centering \begin{subfigure}[b]{0.3\textwidth} \centering \includegraphics[width=\textwidth]{figures/LC.jpg} \caption{S-Shaped Load Cell~\cite{BOSCHEGmbHCo.KG2024S-ShapedCell}} \label{fig:LC} \end{subfigure} \hfill \begin{subfigure}[b]{0.3\textwidth} \centering \includegraphics[width=\textwidth]{figures/LDS.jpeg} \caption{Laser Displacement Sensor~\cite{ShenZhenCo.Ltd.2022LaserLDS}} \label{fig:LDS} \end{subfigure} \hfill \begin{subfigure}[b]{0.3\textwidth} \centering \includegraphics[width=\textwidth]{figures/SG.png} \caption{Strain Gauge~\cite{SilicaTechno2023StrainGauge}} \label{fig:SG} \end{subfigure} \caption{Test Instrumentation} \label{fig:testinstrumentation}}
