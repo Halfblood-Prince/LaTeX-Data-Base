@@ -1,12 +1,12 @@
-% Release Notes for LaTeX Application Programming Interface (API) v 35.1.2 %
+% Release Notes for LaTeX Application Programming Interface (API) v 30.2.1 %
 
 % Created by: Akhil Shimna Kumar %
 % Initial release: 03-11-2023 %
-% Last Update: 12-12-2024 %
- 
-% Disclaimer: Latex API v 33.0.3 %
+% Last Update: 10-01-2025 %
 
-% By using Latex API version 33.0.2, you acknowledge and agree to the following terms and conditions: %
+% Disclaimer: Latex API v 33.0.0 %
+
+% By using Latex API version 33.0.0, you acknowledge and agree to the following terms and conditions: %
 
 % 1. Limited License: LaTeX Application Programming Interface (API) © 2023 by Akhil S Kumar is licensed under Attribution-NonCommercial-NoDerivatives 4.0 International (CC-BY-NC-ND). To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/. This license grants you the right to access and use the API for the sole purpose of document creation and rendering. %
 
@@ -21,45 +21,9 @@
 % 6. Modifications: I reserve the right to modify, suspend, or discontinue the Latex API at any time, with or without notice. I may also update these terms, and it is your responsibility to review them periodically. %
  
 
-\ProvidesPackage{ASKLaTeXLib}
+\ProvidesPackage{ASKLaTeXLib} 
+\RequirePackage{tikz} \usetikzlibrary{angles,quotes} \RequirePackage{tkz-euclide} \RequirePackage{graphicx} \RequirePackage{keyval} \RequirePackage{subcaption} \RequirePackage{lettrine} \RequirePackage{multirow} \RequirePackage{expl3} \RequirePackage{xparse}
 
-\RequirePackage{tikz}
-\usetikzlibrary{angles,quotes}
-\RequirePackage{tkz-euclide}
-\RequirePackage{graphicx}
-\RequirePackage{keyval}
-\RequirePackage{subcaption}
-\RequirePackage{lettrine}
-\RequirePackage{multirow}
+\define@key{imgkeys}{name}{\def\imgname{#1}} \define@key{imgkeys}{width}{\def\imgwidth{#1}} \define@key{imgkeys}{caption} {\def\cap{#1}} \define@key{imgkeys}{label}{\def\lbl{#1}} \define@key{eqnkeys}{a}{\def\myparamone{#1}} \define@key{eqnkeys}{b}{\def\myparamtwo{#1}} \define@key{eqnkeys}{c}{\def\myparamthree{#1}} \define@key{eqnkeys}{d}{\def\myparamfour{#1}} \define@key{eqnkeys}{e}{\def\myparamfive{#1}} \define@key{eqnkeys}{f}{\def\myparamsix{#1}} \define@key{eqnkeys}{g}{\def\myparamseven{#1}} \define@key{eqnkeys}{h}{\def\myparameight{#1}} \define@key{eqnkeys}{i}{\def\myparamnine{#1}} \define@key{rowkeys}{lname}{\def\leftimgname{#1}} \define@key{rowkeys}{lcaption}{\def\leftimgcaption{#1}} \define@key{rowkeys}{llabel}{\def\leftimglabel{#1}} \define@key{rowkeys}{rname}{\def\rightimgname{#1}} \define@key{rowkeys}{rcaption}{\def\rightimgcaption{#1}} \define@key{rowkeys}{rlabel}{\def\rightimglabel{#1}} \define@key{rowkeys}{imgcaption}{\def\fullimgcaption{#1}} \define@key{rowkeys}{imglabel}{\def\fullimglabel{#1}} \define@key{tabkeys}{type}{\def\tbltype{#1}} \define@key{tabkeys}{header}{\def\tblheader{#1}} \define@key{tabkeys}{body}{\def\tblbody{#1}} \define@key{tblkeys}{tableone}{\def\tblone{#1}} \define@key{tblkeys}{tabletwo}{\def\tbltwo{#1}} \define@key{tblkeys}{tablecaption}{\def\tblcap{#1}} \define@key{tblkeys}{tablelabel}{\def\tbllab{#1}}
 
-\define@key{imgkeys}{name}{\def\imgname{#1}}
-\define@key{imgkeys}{width}{\def\imgwidth{#1}}
-\define@key{imgkeys}{caption} {\def\cap{#1}}
-\define@key{imgkeys}{label}{\def\lbl{#1}}
-\define@key{eqnkeys}{a}{\def\myparamone{#1}}
-\define@key{eqnkeys}{b}{\def\myparamtwo{#1}}
-\define@key{eqnkeys}{c}{\def\myparamthree{#1}}
-\define@key{eqnkeys}{d}{\def\myparamfour{#1}}
-\define@key{eqnkeys}{e}{\def\myparamfive{#1}}
-\define@key{eqnkeys}{f}{\def\myparamsix{#1}}
-\define@key{eqnkeys}{g}{\def\myparamseven{#1}}
-\define@key{eqnkeys}{h}{\def\myparameight{#1}}
-\define@key{eqnkeys}{i}{\def\myparamnine{#1}}
-\define@key{rowkeys}{lname}{\def\leftimgname{#1}}
-\define@key{rowkeys}{lcaption}{\def\leftimgcaption{#1}}
-\define@key{rowkeys}{llabel}{\def\leftimglabel{#1}}
-\define@key{rowkeys}{rname}{\def\rightimgname{#1}}
-\define@key{rowkeys}{rcaption}{\def\rightimgcaption{#1}}
-\define@key{rowkeys}{rlabel}{\def\rightimglabel{#1}}
-\define@key{rowkeys}{imgcaption}{\def\fullimgcaption{#1}}
-\define@key{rowkeys}{imglabel}{\def\fullimglabel{#1}}
-\define@key{tabkeys}{type}{\def\tbltype{#1}}
-\define@key{tabkeys}{header}{\def\tblheader{#1}}
-\define@key{tabkeys}{body}{\def\tblbody{#1}}
-\define@key{tblkeys}{tableone}{\def\tblone{#1}}
-\define@key{tblkeys}{tabletwo}{\def\tbltwo{#1}}
-\define@key{tblkeys}{tablecaption}{\def\tblcap{#1}}
-\define@key{tblkeys}{tablelabel}{\def\tbllab{#1}}
-
-
-\newcommand{\img}[2]{ \setkeys{imgkeys}{width=, caption=, label=} \setkeys{imgkeys}{#2} \begin{figure}[#1] \centering \ifx\imgwidth\empty \def\imgwidth{\linewidth} \else \fi \includegraphics[width= \imgwidth, keepaspectratio]{\imgname} \captionsetup{justification=centering} \ifx\cap\empty\else \caption{\cap} \fi \ifx\lbl\empty\else \label{\lbl} \fi \end{figure} \setkeys{imgkeys}{name=, width=, caption=, label=} } \newcommand{\fig}[1]{ \setkeys{imgkeys}{width=, caption=, label=} \setkeys{imgkeys}{#1} \begin{figure}[h] \centering \ifx\imgwidth\empty \def\imgwidth{\linewidth} \else \fi \imgname \captionsetup{justification=centering} \ifx\cap\empty\else \caption{\cap} \fi \ifx\lbl\empty\else \label{\lbl} \fi \end{figure} \setkeys{imgkeys}{name=, width=, caption=, label=} } \newcommand{\p}[0]{ \noindent } \newcommand{\pb}[0]{ \vfill \pagebreak } \newcommand{\eqvar}[1]{ \setkeys{eqnkeys}{a=, b=, c=, d=, e=, f=, g=, h=, i=} \setkeys{eqnkeys}{#1} where: \begin{itemize} \ifx\myparamone\empty\else \item[] \myparamone \fi \ifx\myparamtwo\empty\else \item[] \myparamtwo \fi \ifx\myparamthree\empty\else \item[] \myparamthree \fi \ifx\myparamfour\empty\else \item[] \myparamfour \fi \ifx\myparamfive\empty\else \item[] \myparamfive \fi \ifx\myparamsix\empty\else \item[] \myparamsix \fi \ifx\myparamseven\empty\else \item[] \myparamseven \fi \ifx\myparameight\empty\else \item[] \myparameight \fi \ifx\myparamnine\empty\else \item[] \myparamnine \fi \end{itemize} \setkeys{eqnkeys}{a=, b=, c=, d=, e=, f=, g=, h=, i=} } \newcommand{\imgrow}[1]{ \setkeys{rowkeys}{#1} \begin{figure}[htbp] \centering \begin{subfigure}[b]{0.45\textwidth} \centering \includegraphics[width=\textwidth]{\leftimgname} \caption{\leftimgcaption} \label{\leftimglabel} \end{subfigure} \hfill \begin{subfigure}[b]{0.45\textwidth} \centering \includegraphics[width=\textwidth]{\rightimgname} \caption{\rightimgcaption} \label{\rightimglabel} \end{subfigure} \caption{\fullimgcaption} \label{\fullimglabel} \end{figure} } \newcommand{\customtableofcontents}{  \addtocontents{toc}{\protect\setcounter{tocdepth}{-1}} \tableofcontents \addtocontents{toc}{\protect\setcounter{tocdepth}{2}} } \newcommand{\s}[1]{\renewcommand{\arraystretch}{#1}} \newcommand{\mergepdf}[1]{\includepdf[fitpaper=true]{#1}} \newcommand{\eq}[2]{ \begin{equation} #1 \label{#2} \end{equation} }
+\newcommand{\img}[1]{ \setkeys{imgkeys}{width=, caption=, label=} \setkeys{imgkeys}{#1} \begin{figure}[htbp] \centering \ifx\imgwidth\empty \def\imgwidth{\linewidth} \else \fi \includegraphics[width= \imgwidth, keepaspectratio]{\imgname} \captionsetup{justification=centering} \ifx\cap\empty\else \caption{\cap} \fi \ifx\lbl\empty\else \label{\lbl} \fi \end{figure} \setkeys{imgkeys}{name=, width=, caption=, label=} } \newcommand{\fig}[1]{ \setkeys{imgkeys}{width=, caption=, label=} \setkeys{imgkeys}{#1} \begin{figure}[h] \centering \ifx\imgwidth\empty \def\imgwidth{\linewidth} \else \fi \imgname \captionsetup{justification=centering} \ifx\cap\empty\else \caption{\cap} \fi \ifx\lbl\empty\else \label{\lbl} \fi \end{figure} \setkeys{imgkeys}{name=, width=, caption=, label=} } \newcommand{\p}[0]{ \noindent } \newcommand{\pb}[0]{ \vfill \pagebreak } \newcommand{\eqvar}[1]{ \setkeys{eqnkeys}{a=, b=, c=, d=, e=, f=, g=, h=, i=} \setkeys{eqnkeys}{#1} where: \begin{itemize} \ifx\myparamone\empty\else \item[] \myparamone \fi \ifx\myparamtwo\empty\else \item[] \myparamtwo \fi \ifx\myparamthree\empty\else \item[] \myparamthree \fi \ifx\myparamfour\empty\else \item[] \myparamfour \fi \ifx\myparamfive\empty\else \item[] \myparamfive \fi \ifx\myparamsix\empty\else \item[] \myparamsix \fi \ifx\myparamseven\empty\else \item[] \myparamseven \fi \ifx\myparameight\empty\else \item[] \myparameight \fi \ifx\myparamnine\empty\else \item[] \myparamnine \fi \end{itemize} \setkeys{eqnkeys}{a=, b=, c=, d=, e=, f=, g=, h=, i=} } \ExplSyntaxOn \NewDocumentCommand{\bulletpoints}{m} { \begin{itemize} \seq_set_split:Nnn \l_tmpa_seq { + } { #1 }   \seq_map_inline:Nn \l_tmpa_seq   { \item ##1 } \end{itemize} } \NewDocumentCommand{\enum}{m} { \begin{enumerate} \seq_set_split:Nnn \l_tmpa_seq { + } { #1 }   \seq_map_inline:Nn \l_tmpa_seq  { \item ##1 } \end{enumerate} } \ExplSyntaxOff \newcommand{\imgrow}[1]{ \setkeys{rowkeys}{#1} \begin{figure}[htbp] \centering \begin{subfigure}[b]{0.45\textwidth} \centering \includegraphics[width=\textwidth]{\leftimgname} \caption{\leftimgcaption} \label{\leftimglabel} \end{subfigure} \hfill \begin{subfigure}[b]{0.45\textwidth} \centering \includegraphics[width=\textwidth]{\rightimgname} \caption{\rightimgcaption} \label{\rightimglabel} \end{subfigure} \caption{\fullimgcaption} \label{\fullimglabel} \end{figure} } \newcommand{\customtableofcontents}{  \addtocontents{toc}{\protect\setcounter{tocdepth}{-1}} \tableofcontents \addtocontents{toc}{\protect\setcounter{tocdepth}{2}} }
